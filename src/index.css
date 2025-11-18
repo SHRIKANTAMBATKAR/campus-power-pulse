@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Campus VPP Energy Dashboard Design System */
+
+@layer base {
+  :root {
+    /* Core background and foreground */
+    --background: 220 27% 8%;
+    --foreground: 210 40% 95%;
+
+    /* Card system */
+    --card: 220 27% 12%;
+    --card-foreground: 210 40% 95%;
+
+    /* Popover system */
+    --popover: 220 27% 10%;
+    --popover-foreground: 210 40% 95%;
+
+    /* Primary energy theme */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary energy accents */
+    --secondary: 220 27% 16%;
+    --secondary-foreground: 210 40% 95%;
+
+    /* Muted backgrounds */
+    --muted: 220 27% 14%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Accent colors for energy data */
+    --accent: 193 82% 31%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Alert and warning colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Energy-specific colors */
+    --renewable: 142 76% 36%;
+    --renewable-foreground: 0 0% 100%;
+    --battery: 193 82% 31%;
+    --battery-foreground: 0 0% 100%;
+    --grid: 271 81% 56%;
+    --grid-foreground: 0 0% 100%;
+    --wind: 200 100% 50%;
+    --wind-foreground: 0 0% 100%;
+
+    /* UI elements */
+    --border: 220 27% 20%;
+    --input: 220 27% 16%;
+    --ring: 142 76% 36%;
+
+    /* Sidebar specific colors */
+    --sidebar-background: 220 27% 10%;
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 142 76% 36%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 27% 14%;
+    --sidebar-accent-foreground: 210 40% 90%;
+    --sidebar-border: 220 27% 18%;
+    --sidebar-ring: 142 76% 36%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Energy Dashboard specific components */
+  .energy-card {
+    @apply bg-card border border-border rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+
+  .metric-card {
+    @apply energy-card flex flex-col items-center justify-center text-center min-h-[120px];
+  }
+
+  .status-indicator {
+    @apply w-3 h-3 rounded-full animate-pulse;
+  }
+
+  .status-online {
+    @apply bg-renewable;
+  }
+
+  .status-warning {
+    @apply bg-warning;
+  }
+
+  .status-offline {
+    @apply bg-destructive;
+  }
+
+  .gradient-renewable {
+    background: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
+  }
+
+  .gradient-battery {
+    background: linear-gradient(135deg, hsl(193 82% 31%), hsl(193 82% 41%));
+  }
+
+  .gradient-grid {
+    background: linear-gradient(135deg, hsl(271 81% 56%), hsl(271 81% 66%));
+  }
+
+  .gradient-wind {
+    background: linear-gradient(135deg, hsl(200 100% 50%), hsl(200 100% 60%));
+  }
+}
